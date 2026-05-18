@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
+    <title>FUTO Resource Hub — Powered by Grantify</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════ -->
+    <!--
+    JS targets this element by id="navbar".
+    When hamburger is clicked, JS adds/removes class "nav-open".
+    CSS .navbar.nav-open .mobile-menu expands the dropdown.
+  -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-bar">
+        <!-- Brand -->
+        <div class="nav-brand">
+          <a
+            href="https://bit.ly/42hXhrd"
+            target="_blank"
+            rel="noopener"
+            class="nav-wordmark"
+          >
+            Grant<span>ify</span>
+          </a>
+          <div class="nav-pipe"></div>
+          <span class="nav-subtitle">FUTO Hub</span>
+        </div>
+
+        <!-- Desktop links -->
+        <div class="nav-links-desktop">
+          <a href="#about">About</a>
+          <a href="#resources">Resources</a>
+          <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener"
+            >Grantify</a
+          >
+          <a
+            href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+            target="_blank"
+            rel="noopener"
+            >WhatsApp</a
+          >
+        </div>
+
+        <div class="nav-right">
+          <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener">
+            <button class="nav-btn">Visit Grantify ↗</button>
+          </a>
+
+          <!--
+          HAMBURGER BUTTON
+          ─────────────────
+          Simple <button> element. JS listens for click events on it.
+          The three <span> elements are the three bars of the ≡ icon.
+          CSS class .active (added by JS) transforms them into an X.
+          aria-label gives screen readers context since there's no text.
+          aria-expanded is updated by JS for accessibility.
+        -->
+          <button
+            class="hamburger-btn"
+            id="hamburger"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile dropdown — controlled by .nav-open class -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-inner">
+          <a href="#about" onclick="closeMenu()">About</a>
+          <a href="#resources" onclick="closeMenu()">Resources</a>
+          <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener"
+            >Grantify ↗</a
+          >
+          <a
+            href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+            target="_blank"
+            rel="noopener"
+            >WhatsApp Channel ↗</a
+          >
+          <a
+            href="https://bit.ly/42hXhrd"
+            target="_blank"
+            rel="noopener"
+            class="mobile-menu-cta"
+          >
+            Explore Opportunities →
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          For Nigerian University Students · FUTO
+        </div>
+
+        <h1 class="hero-wordmark">Grant<span class="gold">ify</span></h1>
+
+        <p class="hero-tagline">
+          <strong>One place. Every opportunity.</strong><br />
+          Verified scholarships, grants, internships, fellowships, and
+          hackathons for students like you — plus free study resources below.
+        </p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-val">24+</span>
+            <span class="stat-lbl">Verified listings</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-val">100+</span>
+            <span class="stat-lbl">Channel followers</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-val">Free</span>
+            <span class="stat-lbl">Always</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener">
+            <button class="btn-gold">Explore Opportunities ↗</button>
+          </a>
+          <a
+            href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+            target="_blank"
+            rel="noopener"
+          >
+            <button class="btn-wa">
+              <!-- WhatsApp SVG icon -->
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="15"
+                height="15"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+                />
+              </svg>
+              Join the Channel
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       ABOUT SECTION
+  ═══════════════════════════════════════════════ -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <div class="section-eyebrow">The person behind this</div>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: avatar + social links -->
+        <div class="about-left">
+          <!--
+          TO ADD YOUR PHOTO:
+          Replace the initials span with nothing and add this style
+          to .about-avatar:
+            background-image: url('your-photo.jpg');
+            background-size: cover;
+            background-position: center top;
+          Then remove the inner <span>.
+        -->
+          <div class="about-avatar">
+            <span>E</span>
+          </div>
+
+          <div class="socials">
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/chukwuebuka-henry-b1264625b"
+              target="_blank"
+              rel="noopener"
+              class="social-link linkedin"
+              aria-label="LinkedIn profile"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+
+            <!-- X / Twitter -->
+            <a
+              href="https://x.com/EBUKAH258503"
+              target="_blank"
+              rel="noopener"
+              class="social-link twitter"
+              aria-label="X (Twitter) profile"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+
+            <!-- GitHub -->
+            <a
+              href="https://github.com/ChukwuebukaHenrey"
+              target="_blank"
+              rel="noopener"
+              class="social-link github"
+              aria-label="GitHub profile"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+
+            <!-- WhatsApp Channel -->
+            <a
+              href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+              target="_blank"
+              rel="noopener"
+              class="social-link whatsapp"
+              aria-label="WhatsApp Channel"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: bio -->
+        <div class="about-right">
+          <div>
+            <div class="about-role">Founder · Grantify</div>
+            <h3 class="about-name">Chukwuebuka Henry</h3>
+          </div>
+
+          <div class="about-body">
+            <p>
+              I'm a first-year Software Engineering student at the Federal
+              University of Technology Owerri (FUTO) and the founder of Grantify
+              — a verified opportunity discovery platform built specifically for
+              Nigerian university students.
+            </p>
+            <p>
+              I built this resource hub because I believe access to quality
+              study materials should never be a barrier. Every PDF here is free,
+              watermarked with Grantify's branding, and shared because a student
+              somewhere needs it right now.
+            </p>
+            <p>
+              Grantify is my way of solving a problem I live every day — the gap
+              between Nigerian students and the opportunities that exist for
+              them. One verified listing at a time.
+            </p>
+          </div>
+
+          <div class="about-tags">
+            <span class="about-tag">Software Engineering · FUTO</span>
+            <span class="about-tag">DSN × Microsoft Elevate (AI-900)</span>
+            <span class="about-tag">TRI AI Saturdays Cohort 10</span>
+            <span class="about-tag">React · HTML · CSS · JS</span>
+          </div>
+
+          <a
+            href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+            target="_blank"
+            rel="noopener"
+            class="about-wa-btn"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+              />
+            </svg>
+            Follow the Grantify Channel
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       RESOURCES SECTION — TABBED BY LEVEL
+  ═══════════════════════════════════════════════ -->
+    <section class="section section-alt" id="resources">
+      <div class="section-header">
+        <div class="section-eyebrow">FUTO · 2024/2025 Academic Session</div>
+        <h2 class="section-title">Study Resources</h2>
+        <p class="section-desc">
+          Free, watermarked notes and past questions for every level. More
+          resources added as they're compiled — follow the WhatsApp channel to
+          be notified first.
+        </p>
+      </div>
+
+      <!--
+      LEVEL TAB BAR
+      ─────────────
+      Each button has data-level="levelN" — JS reads this attribute
+      to know which panel to show when a tab is clicked.
+      The first tab starts with class "active" (styled as selected).
+    -->
+      <div class="level-tabs" role="tablist">
+        <button class="level-tab active" data-level="level100" role="tab">
+          100 Level
+        </button>
+        <button class="level-tab" data-level="level200" role="tab">
+          200 Level
+        </button>
+        <button class="level-tab" data-level="level300" role="tab">
+          300 Level
+        </button>
+        <button class="level-tab" data-level="level400" role="tab">
+          400 Level
+        </button>
+        <button class="level-tab" data-level="level500" role="tab">
+          500 Level
+        </button>
+      </div>
+
+      <!-- ── 100 LEVEL PANEL ─────────────────────── -->
+      <!--
+      id="level100" must match the data-level="level100" on the tab button.
+      JS shows the matching panel when a tab is clicked.
+      "active" class is on this one by default — it's the first visible panel.
+    -->
+      <div id="level100" class="level-panel active">
+        <div class="course-accordion">
+          <details class="course-block" open>
+            <summary>
+              <span class="course-code">GST 111</span>
+              <span class="course-name">Communication in English</span>
+              <span class="course-count">3 files</span>
+              <span class="course-chevron">▼</span>
+            </summary>
+            <div class="course-content">
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">Course Notes — Full Semester</div>
+                  <div class="resource-info">
+                    PDF · Grammar, essay writing, comprehension
+                  </div>
+                </div>
+                <!-- Replace href="#" with your Google Drive link: -->
+                <!-- href="https://drive.google.com/uc?export=download&id=YOUR_ID" -->
+                <a
+                  href="#"
+                  download="GST-111-Course-Notes.pdf"
+                  class="download-btn gold"
+                  >⬇ Download</a
+                >
+              </div>
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">Past Questions — 5 Years</div>
+                  <div class="resource-info">PDF · 2019–2023 with answers</div>
+                </div>
+                <a
+                  href="#"
+                  download="GST-111-Past-Questions.pdf"
+                  class="download-btn"
+                  >⬇ Download</a
+                >
+              </div>
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">CBT Practice — 120 Questions</div>
+                  <div class="resource-info">
+                    PDF · Multiple choice with explanations
+                  </div>
+                </div>
+                <a href="#" download="GST-111-CBT.pdf" class="download-btn"
+                  >⬇ Download</a
+                >
+              </div>
+            </div>
+          </details>
+
+          <details class="course-block">
+            <summary>
+              <span class="course-code">COS 101</span>
+              <span class="course-name"
+                >Introduction to Computing Sciences</span
+              >
+              <span class="course-count">3 files</span>
+              <span class="course-chevron">▼</span>
+            </summary>
+            <div class="course-content">
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">Lecture Notes — Complete</div>
+                  <div class="resource-info">
+                    PDF · Hardware, software, networks, data
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  download="COS-101-Notes.pdf"
+                  class="download-btn gold"
+                  >⬇ Download</a
+                >
+              </div>
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">Past Questions — 5 Years</div>
+                  <div class="resource-info">
+                    PDF · 2019–2023 with worked answers
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  download="COS-101-Past-Questions.pdf"
+                  class="download-btn"
+                  >⬇ Download</a
+                >
+              </div>
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">Summary Slides</div>
+                  <div class="resource-info">
+                    PDF · Key concepts for revision
+                  </div>
+                </div>
+                <a href="#" download="COS-101-Summary.pdf" class="download-btn"
+                  >⬇ Download</a
+                >
+              </div>
+            </div>
+          </details>
+
+          <details class="course-block">
+            <summary>
+              <span class="course-code">PHY 101</span>
+              <span class="course-name">General Physics I</span>
+              <span class="course-count">4 files</span>
+              <span class="course-chevron">▼</span>
+            </summary>
+            <div class="course-content">
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">
+                    Lecture Notes — Full Semester
+                  </div>
+                  <div class="resource-info">
+                    PDF · Vectors, kinematics, dynamics, waves
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  download="PHY-101-Notes.pdf"
+                  class="download-btn gold"
+                  >⬇ Download</a
+                >
+              </div>
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">
+                    Vector Problems — Worked Solutions
+                  </div>
+                  <div class="resource-info">
+                    PDF · Component method + cosine/sine rule · Ex. 3.1–3.8
+                  </div>
+                </div>
+                <a href="#" download="PHY-101-Vectors.pdf" class="download-btn"
+                  >⬇ Download</a
+                >
+              </div>
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">Past Questions — 5 Years</div>
+                  <div class="resource-info">PDF · 2019–2023 exam papers</div>
+                </div>
+                <a
+                  href="#"
+                  download="PHY-101-Past-Questions.pdf"
+                  class="download-btn"
+                  >⬇ Download</a
+                >
+              </div>
+              <div class="resource-row">
+                <div class="resource-icon zip">📦</div>
+                <div class="resource-meta">
+                  <div class="resource-title">Complete PHY 101 Bundle</div>
+                  <div class="resource-info">
+                    ZIP · All files in one download
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  download="PHY-101-Bundle.zip"
+                  class="download-btn gold"
+                  >⬇ Download All</a
+                >
+              </div>
+            </div>
+          </details>
+
+          <details class="course-block">
+            <summary>
+              <span class="course-code">GST 103</span>
+              <span class="course-name">Philosophy and Logic</span>
+              <span class="course-count">2 files</span>
+              <span class="course-chevron">▼</span>
+            </summary>
+            <div class="course-content">
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">
+                    Past Questions — 70 Questions, Verified Answers
+                  </div>
+                  <div class="resource-info">
+                    PDF · Multiple choice + theory + answer key
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  download="GST-103-Past-Questions.pdf"
+                  class="download-btn gold"
+                  >⬇ Download</a
+                >
+              </div>
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">
+                    Notes — Logic and Argumentation
+                  </div>
+                  <div class="resource-info">
+                    PDF · Reasoning, fallacies, syllogisms
+                  </div>
+                </div>
+                <a href="#" download="GST-103-Notes.pdf" class="download-btn"
+                  >⬇ Download</a
+                >
+              </div>
+            </div>
+          </details>
+
+          <details class="course-block">
+            <summary>
+              <span class="course-code">FRN 101</span>
+              <span class="course-name">French Language I</span>
+              <span class="course-count">2 files</span>
+              <span class="course-chevron">▼</span>
+            </summary>
+            <div class="course-content">
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">
+                    Grammar Notes — Articles, Verbs, Numbers
+                  </div>
+                  <div class="resource-info">
+                    PDF · Demonstrative adjectives, être/avoir, numbers 1–100
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  download="FRN-101-Grammar.pdf"
+                  class="download-btn gold"
+                  >⬇ Download</a
+                >
+              </div>
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">CBT Practice — 50 Questions</div>
+                  <div class="resource-info">
+                    PDF · Multiple choice with explanations
+                  </div>
+                </div>
+                <a href="#" download="FRN-101-CBT.pdf" class="download-btn"
+                  >⬇ Download</a
+                >
+              </div>
+            </div>
+          </details>
+
+          <details class="course-block">
+            <summary>
+              <span class="course-code">MTH 101</span>
+              <span class="course-name">Elementary Mathematics I</span>
+              <span class="course-count">Coming soon</span>
+              <span class="course-chevron">▼</span>
+            </summary>
+            <div class="course-content">
+              <div class="resource-row">
+                <div class="resource-icon pdf">📄</div>
+                <div class="resource-meta">
+                  <div class="resource-title">Notes and Past Questions</div>
+                  <div class="resource-info">
+                    Being compiled — follow the channel to be notified
+                  </div>
+                </div>
+                <span class="badge-soon">In progress</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+      <!-- END 100 LEVEL -->
+
+      <!-- ── 200 LEVEL PANEL ─────────────────────── -->
+      <div id="level200" class="level-panel">
+        <div class="coming-soon-card">
+          <div class="cs-icon">📚</div>
+          <div class="cs-tag">Not yet available</div>
+          <h3 class="cs-title">200 Level Resources Coming Soon</h3>
+          <p class="cs-body">
+            Materials for 200 level courses are being sourced and compiled. As a
+            first-year student myself, upper-level resources will be added
+            progressively — verified and watermarked before upload.
+          </p>
+          <a
+            href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+            target="_blank"
+            rel="noopener"
+            class="cs-wa"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+              />
+            </svg>
+            Get notified on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- ── 300 LEVEL PANEL ─────────────────────── -->
+      <div id="level300" class="level-panel">
+        <div class="coming-soon-card">
+          <div class="cs-icon">📖</div>
+          <div class="cs-tag">Not yet available</div>
+          <h3 class="cs-title">300 Level Resources Coming Soon</h3>
+          <p class="cs-body">
+            300 level resources are on the roadmap. Contributions from senior
+            students are welcome — reach out via the WhatsApp channel or
+            LinkedIn.
+          </p>
+          <a
+            href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+            target="_blank"
+            rel="noopener"
+            class="cs-wa"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+              />
+            </svg>
+            Get notified on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- ── 400 LEVEL PANEL ─────────────────────── -->
+      <div id="level400" class="level-panel">
+        <div class="coming-soon-card">
+          <div class="cs-icon">🎓</div>
+          <div class="cs-tag">Not yet available</div>
+          <h3 class="cs-title">400 Level Resources Coming Soon</h3>
+          <p class="cs-body">
+            400 level materials will be added in future. If you're a senior
+            student willing to contribute notes or past questions, please reach
+            out.
+          </p>
+          <a
+            href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+            target="_blank"
+            rel="noopener"
+            class="cs-wa"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+              />
+            </svg>
+            Get notified on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- ── 500 LEVEL PANEL ─────────────────────── -->
+      <div id="level500" class="level-panel">
+        <div class="coming-soon-card">
+          <div class="cs-icon">🏆</div>
+          <div class="cs-tag">Not yet available</div>
+          <h3 class="cs-title">500 Level Resources Coming Soon</h3>
+          <p class="cs-body">
+            Final year resources will be added as the hub grows. Follow the
+            Grantify channel to be the first to know when they land.
+          </p>
+          <a
+            href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+            target="_blank"
+            rel="noopener"
+            class="cs-wa"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+              />
+            </svg>
+            Get notified on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- END RESOURCES -->
+
+    <!-- ═══════════════════════════════════════════════
+       GRANTIFY PITCH
+  ═══════════════════════════════════════════════ -->
+    <div class="pitch-strip">
+      <div class="pitch-inner">
+        <div class="pitch-text">
+          <div class="pitch-overline">While you're here</div>
+          <h2 class="pitch-headline">
+            Your notes are sorted.<br />Now sort your future.
+          </h2>
+          <p class="pitch-body">
+            Grantify aggregates verified scholarships, grants, internships,
+            fellowships, and hackathons for Nigerian university students. Every
+            listing sourced directly from official pages — no fabricated
+            deadlines, no inflated benefits.
+          </p>
+          <div class="pitch-tags">
+            <span class="pitch-tag">Scholarships</span>
+            <span class="pitch-tag">Internships</span>
+            <span class="pitch-tag">Fellowships</span>
+            <span class="pitch-tag">Hackathons</span>
+            <span class="pitch-tag">Grants</span>
+          </div>
+        </div>
+
+        <div class="pitch-cta">
+          <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener">
+            <button
+              class="btn-gold"
+              style="font-size: 0.9rem; padding: 14px 30px"
+            >
+              Visit Grantify ↗
+            </button>
+          </a>
+          <span class="pitch-url">bit.ly/42hXhrd</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-wordmark">Grant<span>ify</span></div>
+          <p class="footer-tagline">
+            Sourced and curated by Grantify — One place. Every opportunity.
+          </p>
+          <!-- Social links in footer -->
+          <div class="footer-socials">
+            <a
+              href="https://www.linkedin.com/in/chukwuebuka-henry-b1264625b"
+              target="_blank"
+              rel="noopener"
+              class="footer-social"
+              aria-label="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://x.com/EBUKAH258503"
+              target="_blank"
+              rel="noopener"
+              class="footer-social"
+              aria-label="X"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/ChukwuebukaHenrey"
+              target="_blank"
+              rel="noopener"
+              class="footer-social"
+              aria-label="GitHub"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+              target="_blank"
+              rel="noopener"
+              class="footer-social wa"
+              aria-label="WhatsApp"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Resources</div>
+          <a href="#resources" onclick="switchTab('level100')">100 Level</a>
+          <a href="#resources" onclick="switchTab('level200')">200 Level</a>
+          <a href="#resources" onclick="switchTab('level300')">300 Level</a>
+          <a href="#resources" onclick="switchTab('level400')">400 Level</a>
+          <a href="#resources" onclick="switchTab('level500')">500 Level</a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Connect</div>
+          <a
+            href="https://www.linkedin.com/in/chukwuebuka-henry-b1264625b"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a href="https://x.com/EBUKAH258503" target="_blank" rel="noopener"
+            >X (Twitter)</a
+          >
+          <a
+            href="https://github.com/ChukwuebukaHenrey"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
+            target="_blank"
+            rel="noopener"
+            >WhatsApp Channel</a
+          >
+          <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener"
+            >Grantify</a
+          >
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy"
+          >© 2025 Grantify · FUTO Resource Hub · Built by Chukwuebuka
+          Henry</span
+        >
+        <span class="footer-brand-line"
+          >Sourced and curated by Grantify — One place. Every opportunity.</span
+        >
+      </div>
+    </footer>
+
+    <!--
+    ═══════════════════════════════════════════════════════════
+    JAVASCRIPT — kept as simple and readable as possible.
+    Only two jobs:
+      1. Hamburger menu open/close
+      2. Level tab switching
+
+    Every line is explained. Nothing fancy.
+    ═══════════════════════════════════════════════════════════
+  -->
+    <script>
+      // ── JOB 1: HAMBURGER MENU ───────────────────────────────────
+      // Grab the elements we need by their id attributes
+      const navbar = document.getElementById("navbar");
+      const hamburger = document.getElementById("hamburger");
+
+      // Listen for a click on the hamburger button
+      hamburger.addEventListener("click", function () {
+        // Toggle means: if the class is there, remove it. If not, add it.
+        // .nav-open on .navbar is what CSS uses to slide the mobile menu open.
+        navbar.classList.toggle("nav-open");
+
+        // Also toggle .active on the button itself
+        // This is what CSS uses to animate bars → X
+        hamburger.classList.toggle("active");
+
+        // Update aria-expanded for accessibility (screen readers)
+        // If it's currently "false", set it to "true", and vice versa
+        const isOpen = hamburger.classList.contains("active");
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Close the menu when a link inside it is clicked (for same-page links)
+      function closeMenu() {
+        navbar.classList.remove("nav-open");
+        hamburger.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+
+      // Close menu if user clicks anywhere outside the navbar
+      document.addEventListener("click", function (event) {
+        // event.target is the element the user clicked
+        // .contains() checks if that element is inside the navbar
+        if (!navbar.contains(event.target)) {
+          closeMenu();
+        }
+      });
+
+      // ── JOB 2: LEVEL TAB SWITCHING ──────────────────────────────
+      // Grab all tab buttons and all panels
+      const tabs = document.querySelectorAll(".level-tab");
+      const panels = document.querySelectorAll(".level-panel");
+
+      // A reusable function so footer links can also switch tabs
+      function switchTab(levelId) {
+        // Remove .active from every tab and every panel
+        tabs.forEach(function (tab) {
+          tab.classList.remove("active");
+        });
+        panels.forEach(function (panel) {
+          panel.classList.remove("active");
+        });
+
+        // Add .active to the panel that matches levelId
+        document.getElementById(levelId).classList.add("active");
+
+        // Add .active to the tab whose data-level matches levelId
+        // querySelector finds the first element matching the CSS selector
+        const matchingTab = document.querySelector(
+          '[data-level="' + levelId + '"]',
+        );
+        if (matchingTab) matchingTab.classList.add("active");
+      }
+
+      // Listen for clicks on each tab button
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          // Read the data-level attribute from the clicked tab
+          // e.g. data-level="level200" gives us "level200"
+          const levelId = tab.getAttribute("data-level");
+          switchTab(levelId);
+        });
+      });
+    </script>
+  </body>
+</html>
