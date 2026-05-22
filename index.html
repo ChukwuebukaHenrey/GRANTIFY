@@ -3,12 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png" />
-    <link rel="manifest" href="./favicon_io/site.webmanifest" />
-    <title>FUTO Resource Hub — Powered by Grantify</title>
-    <link rel="stylesheet" href="script.js">
+    <!-- <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    /> -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <!-- <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    /> -->
+    <!-- <link rel="manifest" href="./favicon_io/site.webmanifest" /> -->
+    <link rel="icon" type="image/svg+xml" href="favicon_io/favicon1.svg" sizes="any"/>
+    <title>FUTO Resource Hub — Powered by GrantBase</title>
+    <script src="script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -36,10 +51,11 @@
             rel="noopener"
             class="nav-wordmark"
           >
-            Grant<span>ify</span>
+            Grant<span>Base</span>
           </a>
           <div class="nav-pipe"></div>
           <span class="nav-subtitle">FUTO Hub</span>
+          <span class="nav-beta">BETA</span>
         </div>
 
         <!-- Desktop links -->
@@ -47,7 +63,7 @@
           <a href="#about">About</a>
           <a href="#resources">Resources</a>
           <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener"
-            >Grantify</a
+            >GrantBase</a
           >
           <a
             href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
@@ -59,7 +75,7 @@
 
         <div class="nav-right">
           <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener">
-            <button class="nav-btn">Visit Grantify ↗</button>
+            <button class="nav-btn">Visit GrantBase ↗</button>
           </a>
 
           <!--
@@ -90,7 +106,7 @@
           <a href="#about" onclick="closeMenu()">About</a>
           <a href="#resources" onclick="closeMenu()">Resources</a>
           <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener"
-            >Grantify ↗</a
+            >GrantBase ↗</a
           >
           <a
             href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
@@ -120,7 +136,7 @@
           For Nigerian University Students · FUTO
         </div>
 
-        <h1 class="hero-wordmark">Grant<span class="gold">ify</span></h1>
+        <h1 class="hero-wordmark">Grant<span class="gold">Base</span></h1>
 
         <p class="hero-tagline">
           <strong>One place. Every opportunity.</strong><br />
@@ -179,7 +195,7 @@
        ABOUT SECTION
   ═══════════════════════════════════════════════ -->
     <section class="section" id="about">
-      <div class="section-header">
+      <div id="aboutHeader" class="section-header">
         <div class="section-eyebrow">The person behind this</div>
         <h2 class="section-title">About Me</h2>
       </div>
@@ -187,17 +203,8 @@
       <div class="about-grid">
         <!-- Left: avatar + social links -->
         <div class="about-left">
-          <!--
-          TO ADD YOUR PHOTO:
-          Replace the initials span with nothing and add this style
-          to .about-avatar:
-            background-image: url('your-photo.jpg');
-            background-size: cover;
-            background-position: center top;
-          Then remove the inner <span>.
-        -->
           <div class="about-avatar">
-            <span>E</span>
+            <img src="images/man2.png" alt="th" />
           </div>
 
           <div class="socials">
@@ -266,26 +273,26 @@
         <!-- Right: bio -->
         <div class="about-right">
           <div>
-            <div class="about-role">Founder · Grantify</div>
+            <div class="about-role">Founder · GrantBase</div>
             <h3 class="about-name">Chukwuebuka Henry</h3>
           </div>
 
           <div class="about-body">
             <p>
               I'm a first-year Software Engineering student at the Federal
-              University of Technology Owerri (FUTO) and the founder of Grantify
-              — a verified opportunity discovery platform built specifically for
-              Nigerian university students.
+              University of Technology Owerri (FUTO) and the founder of
+              GrantBase — a verified opportunity discovery platform built
+              specifically for Nigerian university students.
             </p>
             <p>
               I built this resource hub because I believe access to quality
               study materials should never be a barrier. Every PDF here is free,
-              watermarked with Grantify's branding, and shared because a student
-              somewhere needs it right now.
+              watermarked with GrantBase's branding, and shared because a
+              student somewhere needs it right now.
             </p>
             <p>
-              Grantify is my way of solving a problem I live every day — the gap
-              between Nigerian students and the opportunities that exist for
+              GrantBase is my way of solving a problem I live every day — the
+              gap between Nigerian students and the opportunities that exist for
               them. One verified listing at a time.
             </p>
           </div>
@@ -308,7 +315,7 @@
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
               />
             </svg>
-            Follow the Grantify Channel
+            Follow the GrantBase Channel
           </a>
         </div>
       </div>
@@ -734,7 +741,7 @@
           <h3 class="cs-title">500 Level Resources Coming Soon</h3>
           <p class="cs-body">
             Final year resources will be added as the hub grows. Follow the
-            Grantify channel to be the first to know when they land.
+            GrantBase channel to be the first to know when they land.
           </p>
           <a
             href="https://whatsapp.com/channel/0029Vb89Jga23n3mYNAYaI1c"
@@ -761,11 +768,9 @@
       <div class="pitch-inner">
         <div class="pitch-text">
           <div class="pitch-overline">While you're here</div>
-          <h2 class="pitch-headline">
-            Your notes are sorted.<br />Now sort your future.
-          </h2>
+          <h2 class="pitch-headline">WHAT REALLY IS <br />GRANTBASE?</h2>
           <p class="pitch-body">
-            Grantify aggregates verified scholarships, grants, internships,
+            GrantBase aggregates verified scholarships, grants, internships,
             fellowships, and hackathons for Nigerian university students. Every
             listing sourced directly from official pages — no fabricated
             deadlines, no inflated benefits.
@@ -785,7 +790,7 @@
               class="btn-gold"
               style="font-size: 0.9rem; padding: 14px 30px"
             >
-              Visit Grantify ↗
+              Visit GrantBase ↗
             </button>
           </a>
           <span class="pitch-url">bit.ly/42hXhrd</span>
@@ -799,9 +804,9 @@
     <footer class="footer">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-wordmark">Grant<span>ify</span></div>
+          <div class="footer-wordmark">Grant<span>Base</span></div>
           <p class="footer-tagline">
-            Sourced and curated by Grantify — One place. Every opportunity.
+            Sourced and curated by GrantBase — One place. Every opportunity.
           </p>
           <!-- Social links in footer -->
           <div class="footer-socials">
@@ -893,22 +898,21 @@
             >WhatsApp Channel</a
           >
           <a href="https://bit.ly/42hXhrd" target="_blank" rel="noopener"
-            >Grantify</a
+            >GrantBase</a
           >
         </div>
       </div>
 
       <div class="footer-bottom">
         <span class="footer-copy"
-          >© 2025 Grantify · FUTO Resource Hub · Built by Chukwuebuka
+          >© 2025 GrantBase · FUTO Resource Hub · Built by Chukwuebuka
           Henry</span
         >
         <span class="footer-brand-line"
-          >Sourced and curated by Grantify — One place. Every opportunity.</span
+          >Sourced and curated by GrantBase — One place. Every
+          opportunity.</span
         >
       </div>
     </footer>
-
-
   </body>
 </html>
